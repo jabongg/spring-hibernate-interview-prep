@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+    <bean id="helloworld"   class="spring.HelloWorld"></bean>
+
+    <bean id="person" class="spring.Person">
+       <!-- <property name="firstname" value="Minda"></property>
+        <property name="lastname" value="iConnect"></property>
+-->
+        <constructor-arg name="firstname" value="Minda"></constructor-arg>
+        <constructor-arg name="lastname" value="NK"></constructor-arg>
+
+    </bean>
+
+    <bean id="user" class="spring.User" scope="" >
+        <property name="car" ref="car"></property>
+    </bean>
+
+    <bean id="car" class="spring.Car" autowire="byName">
+        <property name="name" value="Renault Duster"></property>
+        <property name="perDayCost" value="1000"></property>
+    </bean>
+
+</beans>
